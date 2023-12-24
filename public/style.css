@@ -1,0 +1,75 @@
+/* style.css */
+
+
+body {
+    margin: 0;
+    padding: 0;
+    --brightness: 1; /* Default brightness value */
+    transition: filter 0.5s; /* Add transition for smooth brightness change */
+}
+
+.background {
+    transform-origin: 51% 75%; /* Set the origin to 45% from the left and 50% from the top */
+    background-image: url('photos/wallpaper-cropped.jpg'); /* Replace with your wallpaper image */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.intro-text {
+    color: #d3d3d3; /* Hacker green color */
+    font-family: 'VT323', monospace; /* Use the VT323 font */
+    font-size: 20px; /* Adjust the font size as needed */
+    font-weight:lighter;
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    top: 56%; /* Adjust top as needed */
+    left: 44%; /* Adjust left as needed */
+    z-index: 1;
+    pointer-events: none; /* Prevent the text from being interactive */
+}
+
+.clickme-box {
+    position: fixed;
+    user-zoom: none;
+    user-select: none;
+    top: 70%; /* Adjust top percentage to position the box on the wallpaper */
+    left: 51%; /* Adjust left percentage to position the box on the wallpaper */
+    width: 25%; /* Adjust width percentage of the black box */
+    height: 30vh; /* Adjust height percentage of the black box */
+    background-color: transparent;
+    transform-origin: top left;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.blink {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        visibility: visible;
+    }
+    50% {
+        visibility: hidden;
+    }
+}
+
+
+
+
+@media screen and (max-width:1400px) {
+    .intro-text{
+        left: 43%;
+    }
+  }
+
+
+  
